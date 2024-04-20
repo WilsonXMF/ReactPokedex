@@ -8,7 +8,10 @@ import { Login } from './componentes/Login/Index'
 function App() {
   return (
     <>
-    <Login></Login>
+    <Login />
+    <Login />
+    <Login />
+    <Login />
        
     </>
   )
