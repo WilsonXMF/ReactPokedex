@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Autocomplete, TextField } from '@mui/material'
+import { Autocomplete, Box, Button, ButtonGroup, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material'
 import { Login } from './componentes/Login/Index'
 import { ListMovies } from './componentes/ListMovies'
+import { light } from '@mui/material/styles/createPalette';
+import { ReactNode } from 'react';
 
 const top100Films = [
   { label: 'The Shawshank Redemption', year: 1994 },
@@ -134,13 +133,67 @@ const top100Films = [
 ];
 
 function App() {
+  function handleChange(_event: SelectChangeEvent<any>, _child: ReactNode): void {
+    throw new Error('Function not implemented.')
+  }
   return (
     <>
-    <Login></Login>
-    <ListMovies listaDeFilmes={top100Films} />
-       
+      <Login />
+      <ListMovies listaDeFilmes={top100Films} />
+      <Box sx={{ minWidth: 120, margi: "25px" }}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Selecione o Sexo</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            //value={age}
+            label="Sexo"
+            onChange={handleChange}
+          >
+            <MenuItem value={10}>Maculino</MenuItem>
+            <MenuItem value={20}>Feminino</MenuItem>
+
+          </Select>
+        </FormControl>
+      </Box>
+
+      <Button variant="contained" sx={{ marginTop: "10px" }}> Adicionar </Button>
+
+      <div>
+        <h3>
+          <p>
+            Listagem:
+          </p>
+        </h3>
+        <div>
+
+        </div>
+        <div>
+          <Box
+            component="form" sx={{ '& > :not(style)': { m: 1, width: '25ch',  }, }}
+            noValidate autoComplete="off"
+          >
+            <TextField sx={{ marginY: "20px" }} label="NOME" color="secondary" focused />
+            <TextField sx={{ marginY: "20px" }} label="SOBRENOME" color="secondary" focused />
+            <TextField label="SEXO" color="secondary" focused />
+            <TextField sx={{ marginY: "20px" }} label="NOME" color="secondary" focused />
+            <TextField sx={{ marginY: "20px" }} label="SOBRENOME" color="secondary" focused />
+            <TextField label="SEXO" color="secondary" focused />
+            <TextField sx={{ marginY: "20px" }} label="NOME" color="secondary" focused />
+            <TextField sx={{ marginY: "20px" }} label="SOBRENOME" color="secondary" focused />
+            <TextField label="SEXO" color="secondary" focused />
+
+          </Box>
+        </div>
+
+      </div>
     </>
+
+
   )
+
 }
+
+
 
 export default App

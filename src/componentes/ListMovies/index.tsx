@@ -33,30 +33,6 @@ export const ListMovies: React.FC<IListMovies> = ({
         </>
        )
     }
-
-
-
-    return (
-        <>
-            <Autocomplete
-                disablePortal
-                id="combo-box-demo"
-                options={listaDeFilmes}
-                sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Movie" />}
-                onChange={(event : any, novoValor: string | null) => {
-                setNomeFilme(novoValor)
-                }}
-            />
-            <div>
-
-                {
-                    filmesVistos.length > 0 ?  
-                   filmesVistos.map((x: any) => exibicao(x))
-                   : "Nenhum filme visualizado"
-                }
-            </div>
-        </>
-    )
+    
 }
 
