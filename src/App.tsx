@@ -2,7 +2,7 @@ import './App.css'
 import { Autocomplete, Box, Button, ButtonGroup, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material'
 import { Login } from './componentes/Login/Index'
 import { ListMovies } from './componentes/ListMovies'
-import { light } from '@mui/material/styles/createPalette';
+//import { light } from '@mui/material/styles/createPalette';
 import { ReactNode } from 'react';
 
 const top100Films = [
@@ -96,10 +96,7 @@ const top100Films = [
   { label: 'Citizen Kane', year: 1941 },
   { label: 'North by Northwest', year: 1959 },
   { label: 'Vertigo', year: 1958 },
-  {
-    label: 'Star Wars: Episode VI - Return of the Jedi',
-    year: 1983,
-  },
+  { label: 'Star Wars: Episode VI - Return of the Jedi',year: 1983 },
   { label: 'Reservoir Dogs', year: 1992 },
   { label: 'Braveheart', year: 1995 },
   { label: 'M', year: 1931 },
